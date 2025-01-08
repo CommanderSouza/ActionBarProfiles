@@ -4,7 +4,6 @@ local LAST_ACTION = 60;
 
 function ABP_OnLoad()
 	this:RegisterEvent("VARIABLES_LOADED");
-	this:RegisterEvent("GOSSIP_SHOW");
 	
 	SlashCmdList["ABP"] = ABP_SlashCommand;
 	SLASH_ABP1 = "/abp";
@@ -264,8 +263,6 @@ function ABP_OnEvent()
 		
 		UIDropDownMenu_Initialize( getglobal( "ABP_DropDownMenu" ), ABP_DropDownMenu_OnLoad, "MENU" );
 		ABPButton_SetPosition(0, 0)
-	elseif event == "GOSSIP_SHOW" and GossipFrameNpcNameText:GetText() == "Goblin Brainwashing Device" then
-		DEFAULT_CHAT_FRAME:AddMessage( "change abp" );
 	end
 end
 
